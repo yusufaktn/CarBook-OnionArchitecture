@@ -23,6 +23,18 @@ builder.Services.AddScoped(typeof(IPricingRepository),typeof(PricingRepository))
 builder.Services.AddScoped(typeof(ILocationRepository),typeof(LocationRepository));
 builder.Services.AddScoped(typeof(IFooterAddressRepository),typeof(FooterAddressRepository));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin() 
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
