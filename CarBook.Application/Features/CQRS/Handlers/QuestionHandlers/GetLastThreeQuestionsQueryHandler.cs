@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.CQRS.Handlers.QuestionHandlers
 {
-    public class GetQuestionQueryHandler : IRequestHandler<GetQuestionQuery, List<GetQuestionQueryResult>>
+    public class GetLastThreeQuestionsQueryHandler : IRequestHandler<GetLastThreeQuestionsQuery, List<GetLastThreeQuestionsQueryResult>>
     {
         private readonly IQuestionRepository _questionRepository;
 
-        public GetQuestionQueryHandler(IQuestionRepository questionRepository)
+        public GetLastThreeQuestionsQueryHandler(IQuestionRepository questionRepository)
         {
             _questionRepository = questionRepository;
         }
 
-        public async Task<List<GetQuestionQueryResult>> Handle(GetQuestionQuery getQuestionQuery, CancellationToken cancellationToken)
+        public async Task<List<GetLastThreeQuestionsQueryResult>> Handle(GetLastThreeQuestionsQuery request, CancellationToken cancellationToken)
         {
-            var values = await _questionRepository.GetAllAsync();
-            return values.Select(x => new GetQuestionQueryResult
+            var values = await _questionRepository.GetLastThreeQuestionsAsync();
+            return values.Select(x => new GetLastThreeQuestionsQueryResult
             {
                 QuestionId = x.QuestionId,
                 UserId = x.UserId,

@@ -12,7 +12,7 @@ namespace CarBook.Persistence.Repositories
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly MyContext _myContext;
-        private readonly DbSet<T> _dbSet;
+        protected readonly DbSet<T> _dbSet;
         public Repository(MyContext myContext)
         {
             _myContext = myContext;

@@ -10,5 +10,6 @@ namespace CarBook.Application.Interfaces
     public interface IQuestionRepository : IRepository<Question>
     {
         // Additional methods specific to Question entity can be added here
+        Task<List<Question>> GetLastThreeQuestionsAsync();
     }
 }

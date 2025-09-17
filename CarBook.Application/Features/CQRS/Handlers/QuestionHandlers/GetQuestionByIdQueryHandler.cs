@@ -26,8 +26,12 @@ namespace CarBook.Application.Features.CQRS.Handlers.QuestionHandlers
             {
                 QuestionId = value.QuestionId,
                 UserId = value.UserId,
+                UserName = value.User.UserName,
+                UserLastName = value.User.UserLastName,
                 CategoryId = value.CategoryId,
+                CategoryName = value.Category.Name,
                 BrandId = value.BrandId,
+                BrandName = value.Brand.Name,
                 SubBrandCategory = value.SubBrandCategory,
                 Title = value.Title,
                 Content = value.Content
