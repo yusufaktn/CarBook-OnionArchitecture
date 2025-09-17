@@ -35,6 +35,7 @@ namespace CarBook.Persistence.Context
         public DbSet<User> Users{ get; set; }
         public DbSet<Question> Questions{ get; set; }
         public DbSet<Answer> Answers{ get; set; }
+        public DbSet<RefreshToken> RefreshTokens{ get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

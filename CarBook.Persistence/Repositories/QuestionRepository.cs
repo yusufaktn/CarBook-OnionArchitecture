@@ -37,5 +37,16 @@ namespace CarBook.Persistence.Repositories
                 .Include(q => q.Brand)
                 .ToListAsync();
         }
+
+        public Task<List<Question>> GetQuestionsByCategoryIdAsync(int categoryId)
+        {
+            return _myContext.Questions
+                .Where(q => q.CategoryId == categoryId)
+                .Include(q => q.User)
+                .Include(q => q.Category)
+                .Include(q => q.Brand)
+                .ToListAsync();
+
+        }
     }
 }

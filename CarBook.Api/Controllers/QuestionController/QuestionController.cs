@@ -52,5 +52,12 @@ namespace CarBook.Api.Controllers.QuestionController
             await _mediator.Send(command);
             return Ok("Question güncelleme işlemi başarılı");
         }
+        [HttpGet("GetQuestionsByCategoryId")]
+        public async Task<IActionResult> GetQuestionsByCategoryId(int categoryId)
+        {
+            var result = await _mediator.Send(new GetQuestionsByCategoryIdQuery(categoryId));
+            return Ok(result);
+        }
+
     }
 }

@@ -11,5 +11,6 @@ namespace CarBook.Application.Interfaces
     {
         // Additional methods specific to Question entity can be added here
         Task<List<Question>> GetLastThreeQuestionsAsync();
+        Task<List<Question>> GetQuestionsByCategoryIdAsync(int categoryId);
     }
 }

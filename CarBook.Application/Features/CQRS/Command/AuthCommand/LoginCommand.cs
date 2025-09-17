@@ -1,0 +1,35 @@
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarBook.Application.Features.CQRS.Command.AuthCommand
+{
+    /// <summary>
+    /// Command for user login
+    /// </summary>
+    public class LoginCommand : IRequest<LoginCommandResult>
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string? IpAddress { get; set; }
+    }
+
+    /// <summary>
+    /// Result for login command
+    /// </summary>
+    public class LoginCommandResult
+    {
+        public bool Success { get; set; }
+        public string? Message { get; set; }
+        public string? AccessToken { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime? ExpiryDate { get; set; }
+        public int? UserId { get; set; }
+        public string? Email { get; set; }
+        public string? UserName { get; set; }
+        public string? UserLastName { get; set; }
+    }
+}

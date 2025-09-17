@@ -18,6 +18,7 @@ namespace CarBook.Domain.Entites
 
         public List<Question> Questions{ get; set; }
         public List<Answer> Answers{ get; set; }
+        public List<RefreshToken> RefreshTokens { get; set; }
 
     }
 }
