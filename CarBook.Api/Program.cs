@@ -22,6 +22,9 @@ builder.Services.AddScoped(typeof(IServiceRepository),typeof(ServiceRepository))
 builder.Services.AddScoped(typeof(IPricingRepository),typeof(PricingRepository));
 builder.Services.AddScoped(typeof(ILocationRepository),typeof(LocationRepository));
 builder.Services.AddScoped(typeof(IFooterAddressRepository),typeof(FooterAddressRepository));
+builder.Services.AddScoped(typeof(IQuestionRepository),typeof(QuestionRepository));
+builder.Services.AddScoped(typeof(IUserRepository),typeof(UserRepository));
+builder.Services.AddScoped(typeof(IAnswerRepository),typeof(AnswerRepository));
 
 builder.Services.AddCors(options =>
 {

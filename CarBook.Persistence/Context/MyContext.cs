@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,7 +32,20 @@ namespace CarBook.Persistence.Context
         public DbSet<Service> Services{ get; set; }
         public DbSet<SocialMedia> SocialMedias{ get; set; }
         public DbSet<Testimonial> Testimonials{ get; set; }
+        public DbSet<User> Users{ get; set; }
+        public DbSet<Question> Questions{ get; set; }
+        public DbSet<Answer> Answers{ get; set; }
 
-       
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Apply all configurations from the current assembly
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
+
+
+
     }
 }
