@@ -28,6 +28,14 @@ namespace CarBook.Api.Controllers.AnswerController
             var result = await _mediator.Send(new GetAnswerByIdQuery(id));
             return Ok(result);
         }
+
+        [HttpGet("GetAnswerByQuestionId")]
+        public async Task<IActionResult> GetListAnswerByQuestionId(int questionId)
+        {
+            var result = await _mediator.Send(new GetAnswerByQuestionIdQuery(questionId));
+            return Ok(result);
+        }
+
         [HttpPost("CreateAnswer")]
         public async Task<IActionResult> CreateAnswer(CreateAnswerCommand command)
         {

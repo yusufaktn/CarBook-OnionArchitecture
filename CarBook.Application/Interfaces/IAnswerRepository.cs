@@ -9,6 +9,6 @@ namespace CarBook.Application.Interfaces
 {
     public interface IAnswerRepository : IRepository<Answer>
     {
-        // Additional methods specific to Answer entity can be added here
+        Task<List<Answer>> GetAnswersByQuestionIdAsync(int questionId);
     }
 }
